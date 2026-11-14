@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      { "hooks": [ { "type": "command", "command": "python3 \"$HOME/.claude/hooks/token-guard/context_guard.py\"", "timeout": 5, "statusMessage": "token guard" } ] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Agent|Workflow", "hooks": [ { "type": "command", "command": "python3 \"$HOME/.claude/hooks/token-guard/agent_guard.py\"", "timeout": 5 } ] },
+      { "matcher": "Read", "hooks": [ { "type": "command", "command": "python3 \"$HOME/.claude/hooks/token-guard/read_guard.py\"", "timeout": 5 } ] },
+      { "hooks": [ { "type": "command", "command": "python3 \"$HOME/.claude/hooks/token-guard/call_guard.py\"", "timeout": 5 } ] }
+    ],
+    "PostToolUse": [
+      { "hooks": [ { "type": "command", "command": "python3 \"$HOME/.claude/hooks/token-guard/call_guard.py\"", "timeout": 5 } ] }
+    ]
+  }
+}
