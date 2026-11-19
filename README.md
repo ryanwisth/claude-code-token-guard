@@ -2,6 +2,8 @@
 
 Four small hooks and nine cost-tiered subagent types that stop a Claude Code session, and the agents it spawns, from spending far more tokens than the work needs.
 
+**Plain-words write-up:** [Spending rules an AI can’t skip](https://ryanwisth.github.io/token-guard.html)
+
 ## Why it exists
 
 An AI coding agent re-reads its whole conversation on every tool call. Three habits make that expensive without making the work better:
